@@ -54,11 +54,6 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
         public string Name { get { return DbConstants.DB_TYPE_MYSQL; } }
         
-        public void MyTest()
-        {
-            String str = "str";
-        }
-
         public bool TestConnection()
         {
             try
@@ -250,7 +245,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
                 string sql = "select * from Offices where city = @city";
-                MySqlDataAdapter da = new MySqlDataAdapter(sql, connection);
+//                MySqlDataAdapter da = new MySqlDataAdapter(sql, connection);
                 da.SelectCommand.Parameters.AddWithValue("@city", city);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -264,7 +259,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
                 string sql = "select * from Comments where productCode = @productCode";
-                MySqlDataAdapter da = new MySqlDataAdapter(sql, connection);
+//                MySqlDataAdapter da = new MySqlDataAdapter(sql, connection);
                 da.SelectCommand.Parameters.AddWithValue("@productCode", productCode); 
                 DataSet ds = new DataSet();
                 da.Fill(ds);
